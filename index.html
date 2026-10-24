@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>田间观测记录 · 农药包装回收打卡 · 秦烺烺</title>
+<meta name="description" content="中小种植户：施肥打药后田间面源风险简易观测，加上农药包装回收节点打卡。不做环评与治理工程总包，不卖水质监测仪。"/>
+<style>
+:root{--ink:#1f3324;--muted:#5f6f62;--line:#d5e0d4;--bg:#f4f7f2;--card:#fff;--accent:#2f6b3a;--warn:#9a5b12}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);line-height:1.65;background:radial-gradient(880px 380px at 8% -8%,#dcefda,transparent 55%),radial-gradient(640px 320px at 100% 0,#efe8cf,transparent 48%),var(--bg)}
+.top{position:sticky;top:0;z-index:10;background:rgba(244,247,242,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top-in{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+.brand{font-weight:800}.nav a{margin-left:6px;text-decoration:none;color:var(--ink);font-size:13px;padding:6px 10px;border-radius:999px}
+.nav a:hover{background:#fff;border:1px solid var(--line)}
+.wrap{max-width:880px;margin:0 auto;padding:18px 16px 56px}
+.kicker{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);background:#e7f3e8;border:1px solid #c5dcc8;border-radius:999px;padding:4px 10px;margin-bottom:10px}
+h1{margin:0 0 10px;font-size:clamp(28px,5vw,40px);line-height:1.2}
+.lead{color:var(--muted);font-size:17px;max-width:42em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{font-size:12px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px}
+.btn-p{background:var(--accent);color:#fff}.btn-g{background:#fff;color:var(--ink);border:1px solid var(--line)}.btn-block{width:100%}
+.warn{margin:16px 0;padding:14px 16px;border-radius:14px;background:#fff8ee;border:1px solid #efd3a8;border-left:6px solid var(--warn)}
+.warn h2{margin:0 0 6px;font-size:16px;color:var(--warn)}
+.grid{display:grid;gap:12px}@media(min-width:760px){.g2{grid-template-columns:1.05fr .95fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 8px 24px rgba(31,51,36,.05)}
+.card h2{margin:0 0 8px;font-size:18px}.card p{margin:0 0 8px;color:var(--muted)}
+.q{margin:0 0 10px;padding:10px 12px;background:#f5faf5;border-left:3px solid var(--accent);border-radius:0 10px 10px 0}
+.q cite{display:block;margin-top:4px;font-style:normal;font-size:12px;color:var(--muted)}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{position:relative;padding:10px 10px 10px 46px;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;background:#fbfdfb}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:10px;top:10px;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+label.ck{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:12px;margin:0 0 8px;background:#fbfdfb;cursor:pointer}
+label.ck input{margin-top:3px;width:18px;height:18px;accent-color:var(--accent)}
+.field{margin:0 0 10px}.field>span{display:block;font-size:13px;font-weight:700;margin-bottom:4px}
+.field input,.field select,.field textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff}
+.field textarea{min-height:70px;resize:vertical}
+.row2{display:grid;gap:10px}@media(min-width:560px){.row2{grid-template-columns:1fr 1fr}}
+.bar{height:8px;background:#e4ede3;border-radius:999px;overflow:hidden;margin:6px 0 8px}.bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,#5a9a62,var(--accent))}
+.msg{min-height:1.3em;font-weight:700}.ok{color:#0b6b4a}.err{color:#8b2e1a}
+.item{border:1px dashed var(--line);border-radius:10px;padding:8px 10px;margin-bottom:8px;font-size:13px;background:#fbfdfb}.item b{display:block}
+.sec{margin-top:16px}footer{margin-top:22px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+code{background:#fff;border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in"><div class="brand">田间观测 · 包装回收</div><nav class="nav"><a href="#obs">田间观测</a><a href="#pack">包装打卡</a><a href="#book">预约试填</a><a href="#hist">本机记录</a></nav></div></header>
+<main class="wrap">
+<section>
+  <div class="kicker">沈阳农业大学 · 环境科学 · 课程 MVP</div>
+  <h1>打完药，记一笔、收一次</h1>
+  <p class="lead">给仍靠印象记田间情况、包装随手扔或攒不清的<strong>中小种植户</strong>：施肥打药后先留下简易观测，再把空瓶空袋回收节点打上卡。表给自家对账和配合收购用，环评与治理工程另找专业单位。</p>
+  <div class="chips"><span class="chip">秦烺烺 · 2024196071</span><span class="chip">田间观测记录·农药包装回收打卡</span><span class="chip">轻工具 · 非工程总包</span></div>
+  <div class="cta"><a class="btn btn-p" href="#obs">记田间观测</a><a class="btn btn-g" href="#pack">包装回收打卡</a></div>
+</section>
+<section class="warn">
+  <h2>这页能做什么</h2>
+  <ul>
+    <li>只做田间面源风险的简易观测留痕，以及农药包装回收节点打卡，方便事后对上「哪天、哪块地、收了几件」。</li>
+    <li>环评报告、治理工程总包、水质检测仪销售不在这页里，也不开处方药方。</li>
+    <li>勾选和记录只存在这台手机或电脑的浏览器里，关掉页面再打开还能看见。</li>
+  </ul>
+</section>
+<section class="sec grid g2">
+  <article class="card">
+    <h2>要先对上的三件事</h2>
+    <blockquote class="q">打药后田间情况靠印象，过两天问「哪块地、什么药」对不上。<cite>方向来自第1周假设 · 观测靠印象</cite></blockquote>
+    <blockquote class="q">空瓶空袋随手扔或攒一堆数不清，回收节点说不清。<cite>方向来自第1周假设 · 包装攒不清</cite></blockquote>
+    <blockquote class="q">事后要对监管或收购要求时，缺一页能留下来的记录。<cite>方向来自第1周假设 · 事后对不上</cite></blockquote>
+    <blockquote class="q">第2周只把「记账与打卡」迁成轻表，不把环评或治理工程搬进来。<cite>HW03 迁移边界</cite></blockquote>
+  </article>
+  <article class="card">
+    <h2>三步就能用</h2>
+    <ol class="steps">
+      <li>在「田间观测」里写清地块、日期和看到的情况，五项都看过再保存。</li>
+      <li>空瓶空袋集中后，在「包装打卡」里留下件数、种类和交接点。</li>
+      <li>想让学生拿纸质表上门说明，就留手机预约试填；环评与工程仍找专业单位。</li>
+    </ol>
+    <p>先免费试两周。打印一页表或按季几元的记账说明，等试填后再谈。这里不写工程款，也不卖监测仪。</p>
+  </article>
+</section>
+<section class="sec card" id="obs">
+  <h2>田间简易观测</h2>
+  <p>五项都看过才能保存。目标：打完药打开就能告诉家里人今天记了哪块地。</p>
+  <div class="bar"><i id="bar"></i></div>
+  <p id="barText" style="margin:0 0 10px;font-size:13px;color:var(--muted)">已看 0 / 5</p>
+  <form id="obsForm">
+    <label class="ck"><input type="checkbox" name="c1"/> 地块或田块已经写清（路南 / 村东几亩）</label>
+    <label class="ck"><input type="checkbox" name="c2"/> 施肥或打药日期已经写上，不是“这几天”</label>
+    <label class="ck"><input type="checkbox" name="c3"/> 用的是哪类肥/药已经勾过（只记大类，不开方）</label>
+    <label class="ck"><input type="checkbox" name="c4"/> 肉眼看到的田间情况已经写了一句</label>
+    <label class="ck"><input type="checkbox" name="c5"/> 边界自检：这页只做观测与包装打卡，不做环评或工程</label>
+    <div class="row2">
+      <label class="field"><span>哪块地</span><input name="plot" placeholder="例如：路南玉米 6 亩"/></label>
+      <label class="field"><span>哪天</span><input type="date" name="day"/></label>
+    </div>
+    <div class="row2">
+      <label class="field"><span>肥/药大类</span>
+        <select name="kind">
+          <option value="">请选择</option>
+          <option>化肥</option>
+          <option>杀虫/杀菌剂</option>
+          <option>除草剂</option>
+          <option>其他农资包装</option>
+        </select>
+      </label>
+      <label class="field"><span>谁去看的</span><input name="who" placeholder="户主 / 儿子 / 帮工"/></label>
+    </div>
+    <label class="field"><span>肉眼看到的一句</span><textarea name="note" placeholder="例如：药液干了；垄沟无明显积液；包装先堆在地头。"></textarea></label>
+    <button class="btn btn-p btn-block" type="submit">保存观测到本机</button>
+    <p class="msg" id="obsMsg"></p>
+  </form>
+</section>
+<section class="sec card" id="pack">
+  <h2>农药包装回收打卡</h2>
+  <p>空瓶空袋收齐后补一笔。以后问「上次收了几件、交到哪里」，打开就能对上。</p>
+  <form id="packForm">
+    <div class="row2">
+      <label class="field"><span>打卡时间</span><input type="datetime-local" name="when" required/></label>
+      <label class="field"><span>大约件数</span>
+        <select name="count" required>
+          <option value="">请选择</option>
+          <option>1–5 件</option>
+          <option>6–10 件</option>
+          <option>11–20 件</option>
+          <option>超过 20 件</option>
+          <option>当时没数清，稍后补</option>
+        </select>
+      </label>
+    </div>
+    <div class="row2">
+      <label class="field"><span>包装种类</span>
+        <select name="ptype" required>
+          <option value="">请选择</option>
+          <option>农药瓶</option>
+          <option>农药袋</option>
+          <option>肥袋</option>
+          <option>混装（瓶+袋）</option>
+        </select>
+      </label>
+      <label class="field"><span>交接点</span><input name="spot" required placeholder="例如：村收集点 / 农资店"/></label>
+    </div>
+    <label class="field"><span>一句备注</span><textarea name="note" placeholder="例如：弟弟代交；瓶盖已拧紧；先暂存院角。"></textarea></label>
+    <button class="btn btn-p btn-block" type="submit">保存这条回收打卡</button>
+    <p class="msg" id="packMsg"></p>
+  </form>
+</section>
+<section class="sec card" id="book">
+  <h2>预约两周试填</h2>
+  <p>学生用电话说明怎么填一页表。上门只带观测表和回收打卡，不谈环评报价。</p>
+  <form id="bookForm">
+    <div class="row2">
+      <label class="field"><span>怎么称呼</span><input name="name" required placeholder="老张 / 户主"/></label>
+      <label class="field"><span>手机号</span><input name="phone" required pattern="1[3-9]\d{9}" placeholder="11位"/></label>
+    </div>
+    <label class="field"><span>种植情况</span>
+      <select name="way" required>
+        <option value="">请选择</option>
+        <option>自家田，自己打药收包装</option>
+        <option>和邻居共用收集点</option>
+        <option>已有回收习惯，仍想先把账记清</option>
+      </select>
+    </label>
+    <label class="field"><span>最想先记清的一件事</span><textarea name="wish" placeholder="例如：打完药过两天对不上；空瓶攒一堆数不清"></textarea></label>
+    <button class="btn btn-p btn-block" type="submit">留下预约（仅存本机）</button>
+    <p class="msg" id="bookMsg"></p>
+    <p style="font-size:12px;color:var(--muted)">课程联系人：秦烺烺 · 18984852775 · 沈阳农业大学土地与环境学院 · 环境科学</p>
+  </form>
+</section>
+<section class="sec card" id="hist">
+  <h2>本机最近记录</h2>
+  <div id="list"></div>
+  <button class="btn btn-g" type="button" id="clear">清空本机记录</button>
+</section>
+<footer>
+  <p>秦烺烺（学号 2024196071）· 田间观测记录·农药包装回收打卡 · 路径 B 落地页</p>
+  <p>公网：<code>https://hjw-create.github.io/qinll-baozhuang-mvp/</code></p>
+</footer>
+</main>
+<script>
+(function(){
+  var KEY='qinll_baozhuang_v1';
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function save(list){localStorage.setItem(KEY,JSON.stringify(list.slice(0,40)));render()}
+  function stamp(){var d=new Date(),p=function(n){return n<10?'0'+n:''+n};return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate())+' '+p(d.getHours())+':'+p(d.getMinutes())}
+  function render(){var list=load(),box=document.getElementById('list');if(!list.length){box.innerHTML="<p style='color:var(--muted);font-size:13px'>还没有记录。先填一轮观测或一条包装打卡。</p>";return}box.innerHTML=list.map(function(r){return "<div class='item'><b>"+r.type+" · "+r.at+"</b>"+r.summary+"</div>"}).join('')}
+  function bar(){var boxes=document.querySelectorAll('#obsForm input[type=checkbox]');var n=0;boxes.forEach(function(b){if(b.checked)n++});document.getElementById('bar').style.width=(n/boxes.length*100)+'%';document.getElementById('barText').textContent='已看 '+n+' / '+boxes.length}
+  document.querySelectorAll('#obsForm input[type=checkbox]').forEach(function(b){b.addEventListener('change',bar)});bar();
+  document.getElementById('obsForm').onsubmit=function(e){e.preventDefault();var fd=new FormData(e.target);var n=['c1','c2','c3','c4','c5'].filter(function(k){return fd.get(k)}).length;var msg=document.getElementById('obsMsg');if(n<5){msg.className='msg err';msg.textContent='五项都看过再保存，漏一项下周对不上。';return}var list=load();list.unshift({type:'田间观测',at:stamp(),summary:'地块：'+(fd.get('plot')||'未填')+'；日期：'+(fd.get('day')||'未填')+'；大类：'+(fd.get('kind')||'未填')+'；谁看：'+(fd.get('who')||'未填')+'；情况：'+((fd.get('note')||'未写').toString().trim()||'未写')+'。'});save(list);msg.className='msg ok';msg.textContent='观测已在这台设备上。可以把页面给下一班看。'};
+  document.getElementById('packForm').onsubmit=function(e){e.preventDefault();var fd=new FormData(e.target);var list=load();list.unshift({type:'包装打卡',at:stamp(),summary:'时间：'+fd.get('when')+'；件数：'+fd.get('count')+'；种类：'+fd.get('ptype')+'；交接点：'+fd.get('spot')+'；备注：'+((fd.get('note')||'无').toString().trim()||'无')});save(list);document.getElementById('packMsg').className='msg ok';document.getElementById('packMsg').textContent='回收打卡已保存，复盘时按交接点往上翻。'};
+  document.getElementById('bookForm').onsubmit=function(e){e.preventDefault();var fd=new FormData(e.target);var phone=(fd.get('phone')||'').toString();var msg=document.getElementById('bookMsg');if(!/^1[3-9]\d{9}$/.test(phone)){msg.className='msg err';msg.textContent='请填写11位手机号，方便约试填。';return}var list=load();list.unshift({type:'预约试填',at:stamp(),summary:'称呼：'+fd.get('name')+'；手机：'+phone+'；情况：'+fd.get('way')+'；想记清：'+((fd.get('wish')||'未写').toString().trim()||'未写')});save(list);msg.className='msg ok';msg.textContent='预约草稿在本机。学生会电话说明怎么填表，不谈环评报价。';e.target.reset()};
+  document.getElementById('clear').onclick=function(){if(!confirm('清空这台设备上的全部记录？'))return;localStorage.removeItem(KEY);render()};
+  render();
+})();
+</script>
+</body>
+</html>
